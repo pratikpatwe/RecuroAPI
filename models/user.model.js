@@ -1,4 +1,4 @@
-import mongoose from 'momngoose';
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     trim: true,
     unique: true,
     minLenght: [9, 'Email must be at least 9 characters long'],
-    maxLength: [50, 'Email must be at most 50 characters long'],
+    maxLength: 300,
     lowercase: true,
     match: [
       /\S+@\S+\.\S+/,
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Password is required'],
     minLenght: [8, 'Password must be at least 8 characters long'],
-    maxLength: [50, 'Password must be at most 50 characters long'],
+    maxLength: 300,
   },
 }, {timestamps: true});
 
